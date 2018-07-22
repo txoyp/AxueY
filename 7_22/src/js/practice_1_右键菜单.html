@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;       /*去除li前的"."*/
+        }
+        #menu{
+            width: 120px;
+            border: 1px solid #000000;
+            text-align: center;
+            display: none;
+            position: absolute;
+            top:0px;
+            left: 0px;
+        }
+        #menu li{
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+        #menu li:last-child{
+            border-bottom :0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>打开</li>
+        <li>下载</li>
+        <li>删除</li>
+        <li>复制</li>
+        <li>属性</li>
+    </ul>
+    <script>
+           //鼠标右键
+            //取消浏览器默认行为；
+            // e.returnValue = false;   IE浏览器
+            // e.preventDefault();         //标准浏览器
+            // return false;
+           var oMenu = document.getElementById('menu');
+           var oLi = document.getElementsByTagName('li');
+            document.oncontextmenu = function (e) {
+                oMenu.style.display = 'block';
+                var dw = document.documentElement.offsetWidth;
+                var mw = oMenu.offsetWidth;
+                if( e.clientX > (dw - mw) )
+                {
+                    oMenu.style.left = (e.clientX - mw) + 'px';
+                    oMenu.style.top = e.clientY + 'px';
+                }
+                else
+                {
+                    oMenu.style.top = e.clientY + 'px';
+                    oMenu.style.left = e.clientX + 'px';
+                }
+                e.preventDefault();
+            }
+            for(var i = 0;i<oLi.length;i++)
+            {
+                oLi[i].onmouseover = function ()
+                {
+                    this.style.background = '#ccc';
+                }
+                oLi[i].onmouseout = function ()
+                {
+                    this.style.background = '';
+                }
+                oLi[i].onclick = function ()
+                {
+                    alert(this.innerHTML);
+                }
+                document.onclick = function (e) {
+                    oMenu.style.display = 'none';
+                }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--返回上一页面-->
+    <button id="btn">返回</button>
+    <script>
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function () {
+            window.history.back();
+            // history.go(-1);
+            //负数往回，正数往下；
+            alert(history.length);
+            //history.length;返回url个数
+            alert(window.location.host);
+        }
+
+    </script>
+</body>
+</html>
