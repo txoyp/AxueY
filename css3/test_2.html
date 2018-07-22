@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #all{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .half_circle1{
+            width:200px;
+            height:100px;
+            position: absolute;
+            top:170px;
+            left:-81.5px;
+            background-color:red;
+            border-radius:100px 100px 0 0;
+            transform-origin: left bottom;
+            transform: rotate(-45deg);
+            animation: xxx 2s linear forwards;
+        }
+        .half_circle2{
+            width:200px;
+            height:100px;
+            position: absolute;
+            top: 28px;
+            left: 59.5px;
+            background-color:red;
+            border-radius:100px 100px 0 0;
+            transform-origin:left bottom;
+            transform: rotate(45deg);
+            animation: yyy 2s linear forwards;
+        }
+        .half_square1 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 170px;
+            left:-40.5px;
+            background-color: red;
+            transform-origin:center center;
+            transform: rotate(45deg);
+        }
+        @keyframes xxx {
+            0%{
+
+            }
+            100%{
+                transform-origin:left bottom ;
+                transform: rotate(45deg) rotateX(180deg);
+            }
+        }
+        @keyframes yyy {
+            0% {
+
+            }
+            100% {
+                transform-origin: left bottom;
+                transform: rotate(-45deg) rotateY(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="half_circle1"></div>
+        <div class="half_circle2"></div>
+        <div class="half_square1"></div>
+        <div class="half_square2"></div>
+    </div>
+</body>
+</html>

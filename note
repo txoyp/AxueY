@@ -1,0 +1,49 @@
+display:none;   隐藏
+display:inline-block;    块变行
+display:block;    行变块
+1.浮动 float 依次向左或向右浮动
+行级元素 、块级元素区别
+
+
+相对定位：相对于自身元素 相对于body relative 空间不会释放 该位置空间一直被占用
+绝对定位：相对于最近的，已经定位的父元素； absolute  空间释放 默认相对于浏览器
+固定定位：fixed 相对于浏览器
+
+
+clear:清除浮动
+行级元素：不能设置宽高，内容撑开 <变为块级、float、position  可以设置宽高>
+块级元素：可以设置宽高，内容撑开高度
+行级转化为块级：float
+
+图片： .png 为透明的  .jpg背景为白色
+
+选择器：not(.xxx); 除了.xxx,设置其他样式
+
+background:url() no repeat center center;   //取消平铺 居中
+background:url() no repeat right center;   //取消平铺 靠右居中
+/****************/
+overflow:hidden
+
+transform:translate(100px,100px);  位移 相对于父级元素 向右 向下
+transform:translate(50%，100%);  位移 相对于元素自己本身
+
+7/16
+CSS3
+1.选择器
+“+”  紧跟在该元素后的兄弟元素    eg.h1 + .ppp
+"~"
+    属性选择器
+    "[]"  有“[]”中属性的标签
+    [alt=""]
+    [alt~=""]
+    自定义属性 以xxx结尾
+
+    transform-orign： center bottom
+    rotateX(180deg);
+
+2018/07/20
+JS
+    闭包：
+
+
+    url = https://github.com/txoyp/AxueY.git

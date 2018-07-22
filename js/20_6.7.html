@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 斐波那契数列非递归
+    function fn(n) {
+        if((n==1)||(n==2)){
+            return 1;
+        }
+        var a1 = 1;
+        var a2 = 1;
+        var temp;
+        for(i = 3;i <= n;i++){
+            temp = a1 + a2;
+            a1 = a2;
+            a2 = temp;
+        }
+        return temp;
+    }
+    console.log(fn(10));
+
+    function f(n) {
+        if((n==1)||(n==2)){
+            return 1;
+        }
+        else{
+            return f(n-2) + f(n-1);
+            // return arguments.callee(n-2) + arguments.callee(n-1);
+            // arguments.callee();    代表当前函数名;
+        }
+    }
+    console.log(f(10));
+
+    //5.9
+    function nine(x,y) {
+        return Math.floor(Math.random() * (y - x + 1) + x);
+    }
+    for(var i = 0; i < 3;i++){
+        if(nine(1,9) == 8){
+            console.log("success");
+            break;
+        }
+    }
+
+    function nine_1() {
+
+    }
+</script>
+</body>
+</html>
