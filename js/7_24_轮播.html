@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        #container{
+            width: 530px;
+            height: 300px;
+            position: relative;
+            top: 100px;
+            left: 35%;
+        }
+        #container .pic img{
+            float: left;
+            position: absolute;
+            display: none;
+        }
+        #container .pic img.selected{
+            display: block;
+        }
+        #container ul.nav{
+            position: absolute;
+            right: 10px;
+            bottom:20px;
+        }
+        #container .arrows{
+            position: absolute;
+            left: 10px;
+            bottom:36px;
+        }
+        #container .nav li,.arrows span{
+            float: left;
+            list-style: none;
+            height: 20px;
+            width: 20px;
+            background: #000;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        #container .nav .selected{
+            background: orange;
+        }
+    </style>
+</head>
+<body>6div id="container">
+        <div class="pic">
+            <img class="selected" src="../../../../AxueY/js/icon/1.jpg" alt="">
+            <img src="../../../../AxueY/js/icon/2.jpg" alt="">
+            <img src="../../../../AxueY/js/icon/3.jpg" alt="">
+            <img src="../../../../AxueY/js/icon/4.jpg" alt="">
+        </div>
+        <ul class="nav">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="arrows">
+            <span id="next">&lt;</span>
+            <span id="last">&gt;</span>
+        </div>
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var aImg = document.getElementsByTagName('img');
+        var aLast = document.getElementById('last');
+        var aNext = document.getElementById('next');
+        var aContener = document.getElementById('container');
+        var flag = 0;
+        for(var i = 0;i < aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function () {
+                flag = this.index;
+                changeImg(this.index);
+            }
+            // aLi[i].onselectstart()
+        }
+        aNext.onclick = function () {
+            flag--;
+            if(flag === -1)
+            {
+                flag = aImg.length-1;
+            }
+            changeImg(flag);
+        }
+        aLast.onclick = function () {
+            flag++;
+            if(flag >= aImg.length){
+                flag = 0;
+            }
+            changeImg(flag);
+        }
+        function changeImg(index) {
+            for(var j = 0;j < aLi.length;j++){
+                aLi[j].className = '';
+                aImg[j].className = '';
+            }
+            aImg[index].className = 'selected';
+            aLi[index].className = 'selected';
+        }
+        aContener.onmouseover = function () {
+            clearInterval(timer);
+        }
+        aContener.onmouseout = function () {
+            play();
+        }
+        play();
+        function play() {
+            timer = setInterval(function () {
+                aLast.onclick();
+            },2000)
+        }
+    </script>
+</body>
+</html>

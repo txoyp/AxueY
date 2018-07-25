@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../../AxueY/js/tmall_part.css">
+    <link rel="stylesheet" type="text/css" href="../../../../AxueY/js/icon/iconfont.css">
+</head>
+<body>
+    <div id="all">
+            <a  href=""><div id="green">进入疯抢</div></a>
+            <a href=""><div id="menu">量贩装</div></a>
+            <div class="picture_show">
+                <div class="p_left">
+                    <div class="squear">
+                        <a style="text-decoration: none" href="">
+                            <div class="text">
+                                <b><i class="iconfont icon-rili"></i></b>
+                                <span class="text_1"><b>限时限量疯抢</b></span><br>
+                                <span class="text_2">1元超值疯抢中</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <img src="../tmall/img/paper.jpg">
+            </div>
+            <div class="picture">
+                <div class="p_left">
+                    <div class="squear">
+                        <a style="text-decoration: none" href="">
+                            <div class="text_hover">
+                                <b><i class="iconfont icon-rili"></i></b>
+                                <span class="text_1"><b>蓝月亮洗洁精</b></span><br>
+                                <span class="text_2">限时抢半价</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <img src="../tmall/img/paper-1.jpg">
+            </div>
+    </div>
+    <script>
+        var aMenu_l = document.getElementById('green');
+        var aMenu_r = document.getElementById('menu');
+        var aPic_l = document.getElementsByClassName('picture_show');
+        var aPic_r = document.getElementsByClassName('picture');
+        console.log(aPic_l.style);
+            aMenu_l.onmouseover = function () {
+                aMenu_l.style.background = 'rgb(0,178,78)';
+                aMenu_l.style.color = 'white';
+            }
+            aMenu_l.onmouseout = function () {
+                aMenu_l.style.background = '#ccc';
+                aMenu_l.style.color = '';
+            }
+                aMenu_r.onmouseover = function () {
+                aMenu_r.style.background = 'rgb(0,178,78)';
+                aMenu_r.style.color = 'white';
+            }
+            aMenu_r.onmouseout = function () {
+                aMenu_r.style.background = '#ccc';
+                aMenu_r.style.color = '';
+            }
+        // aMenu_l.onmouseover = function () {
+        //     this.style.background = 'rgb(0,178,78)';
+        //     this.style.color = 'white';
+        // }
+        // aMenu_l.onmouseout = function () {
+        //     this.style.background = '#ccc';
+        //     this.style.color = '';
+        // }
+        // aMenu_r.onmouseover = function () {
+        //     this.style.background = 'rgb(0,178,78)';
+        //     this.style.color = 'white';
+        //
+        // }
+        // aMenu_r.onmouseout = function () {
+        //     this.style.background = '';
+        //     this.style.color = '';
+        //
+        // }
+    </script>
+</body>
+</html>
