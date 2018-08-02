@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #container{
+            width: 100%;
+        }
+        img{
+            border:none;
+        }
+        #container img{
+            float:left;
+            width: 25%;
+            box-sizing: border-box;
+            border-right:4px solid #000;
+            border-bottom:4px solid #000;
+        }
+        #big_img{
+            height: 100%;
+            background-repeat: no-repeat;
+            background-color: #000;
+            background-size: contain;
+            background-position: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="thumbs/1.jpg" alt="">
+        <img src="thumbs/2.jpg" alt="">
+        <img src="thumbs/3.jpg" alt="">
+        <img src="thumbs/4.jpg" alt="">
+
+        <img src="thumbs/5.jpg" alt="">
+        <img src="thumbs/6.jpg" alt="">
+        <img src="thumbs/7.jpg" alt="">
+        <img src="thumbs/8.jpg" alt="">
+        <img src="thumbs/9.jpg" alt="">
+
+        <img src="thumbs/10.jpg" alt="">
+        <img src="thumbs/11.jpg" alt="">
+        <img src="thumbs/12.jpg" alt="">
+        <img src="thumbs/13.jpg" alt="">
+        <img src="thumbs/14.jpg" alt="">
+
+        <img src="thumbs/15.jpg" alt="">
+        <img src="thumbs/16.jpg" alt="">
+        <img src="thumbs/17.jpg" alt="">
+        <img src="thumbs/18.jpg" alt="">
+        <img src="thumbs/19.jpg" alt="">
+
+        <img src="thumbs/20.jpg" alt="">
+        <img src="thumbs/21.jpg" alt="">
+        <img src="thumbs/22.jpg" alt="">
+        <img src="thumbs/23.jpg" alt="">
+        <img src="thumbs/24.jpg" alt="">
+
+    </div>
+    <div id="big_img">
+
+    </div>
+    <script src="../zepto.js"></script>
+    <script src="../touch.js"></script>
+    <script>
+        $(function () {
+            var iNow = 0;
+            $('#container').on('tap','img',function () {
+               $('#container').hide();
+               iNow = $(this).index();
+               $('#big_img').css('background-image','url(img/'+($(this).index()+1)+'.jpg)').show();
+            });
+            $('#big_img').on('tap',function () {
+                $('#container').show();
+                $('#big_img').hide();
+            }).on('swipeLeft',function () {
+                iNow++;
+                if(iNow > 24){
+                    iNow = 0;
+                }
+                $('#big_img').css('background-image','url(img/'+(iNow+1)+'.jpg)').show();
+            }).on('swipeRight',function () {
+                iNow--;
+                if(iNow < 0){
+                    iNow = 23;
+                }
+                $('#big_img').css('background-image','url(img/'+(iNow+1)+'.jpg)').show();
+            });
+        });
+    </script>
+</body>
+</html>
