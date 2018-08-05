@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var s = new Set();
+    s.add(1);
+    s.add(2);
+    // s.delete(2)  删除
+    // s.clear() 清空
+    // s.size() 长度
+    var keys = s.keys(); // 返回一个迭代器
+    for(var k of keys){
+    console.log(k);
+    }
+
+    let values = s.values();
+    for(var v of values){
+    console.log(v);
+    }
+
+    var entries = s.entries(); // 将key和value 组合成一个数组返回
+    for(var e of entries){
+    console.log(e);
+    }
+</script>
+</body>
+</html>

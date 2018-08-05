@@ -1,0 +1,42 @@
+箭头函数：里面的this是定义时执行。普通函数里面的this是运行时执行   this指向
+function fn(){
+    consele.log(arguments[0]);
+}
+fn(1);
+箭头函数中没有arguments
+function User(){
+    this.name = 'zs';
+}
+==
+var User = ()=>{
+    this.name = 'zs';
+}
+var u = new User();
+//没有构造方法 constructor()
+
+改变this指向：/**************************************/
+
+扩展运算符：“...”
+
+/*************2018/8/5*****************/
+1.模板字符串：使用反引号(“)，可以保留字符串的格式，空格回车，使用(${})来引入变量
+    var str1 = `<div>${表达式}</div>
+
+2.includes 、startsWidth、endsWidth
+    (1). includes : 返回布尔值，表示是否找到了参数字符串
+    (2). startsWidth : 返回布尔值，表示参数字符串是否在源字符串的头部
+    (3). endsWidth : 返回布尔值
+
+3.repeat
+    repeat(n)
+    表示将目标字符串重复n此，并将他作为结果返回
+
+4.对象属性简写
+    var n = 'xxxx';
+    var obj = {
+        n,      /n:n,
+        age:12
+    }
+动态属性、（浅拷贝，深拷贝）拷贝对象
+
+Object.is(); 相当于‘===’        //解决JS中 +0与-0 NaN与NaN判断是否相等的问题
